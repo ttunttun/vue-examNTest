@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/*!
+ * Vuetify.js Custom
+ *
+ * Appendix
+ * - Vuetify UI Guide Link: https://github.com/nuxt-community/vuetify-module#customvariables
+ *
+ * Copyright © 2021-2022 ADCAPSULE
+ */
+
+header {
+  border-bottom:1px solid #999; margin-bottom:1em; padding-bottom:1em;
+  h1 {font-size:16px; color:white;}
+}
+
+.theme--dark {
+  &.v-application {
+    a {
+      color:#fff;
+    }
+  }
+}
