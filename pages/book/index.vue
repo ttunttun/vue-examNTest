@@ -1,8 +1,13 @@
 <template>
   <section>
-    <v-card class="mx-auto">
+    <v-card class="mx-auto" max-width="500">
+      <v-toolbar
+        color="green"
+        dark
+      >
+        <v-toolbar-title>책 예제 따라하기</v-toolbar-title>
+      </v-toolbar>
       <v-list dense>
-        <v-subheader>책 예제 따라하기</v-subheader>
         <v-list-item-group v-model="selectedItem" color="primary">
           <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
             <v-list-item-action>
@@ -21,6 +26,9 @@
 <script>
 export default {
   name: '책 예제',
+  components: {
+
+  },
   data() {
     return {
       viewTest: false,

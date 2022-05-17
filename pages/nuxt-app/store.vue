@@ -1,6 +1,11 @@
 <template>
   <section>
     <div>
+      <v-card class="mx-auto" max-width="500">
+        <v-toolbar color="pink" dark>
+          <ChildHeader />
+          <v-toolbar-title>폼 입력 바인딩</v-toolbar-title>
+        </v-toolbar>
         <h1>Store</h1>
         <div>텍스트 가져오기 store/index.js/subject: {{thisSubject}}</div>
         <button @click="setSubjectData">'테스트용 제목'을 store/index.js/subject에 저장</button>
@@ -19,6 +24,7 @@
                 </li>
             </ul>
         </div>
+      </v-card>
     </div>
   </section>
 </template>
@@ -29,9 +35,10 @@ hr {margin:.8em 0;}
 
 <script>
 import { mapState } from 'vuex'
+import ChildHeader from '~/components/common/childHeader.vue'
 export default {
   components: {
-
+    ChildHeader
   },
   computed: {
     ...mapState('commons', {
@@ -54,6 +61,9 @@ export default {
     setListData(){
         this.$store.dispatch("commons/getListData")
     }
+  },
+  mounted () {
+    document.querySelector('#navItem1').classList.add('v-list-item--active');
   }
 }
 </script>

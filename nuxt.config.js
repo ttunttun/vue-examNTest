@@ -18,7 +18,9 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap'}
     ]
   },
 
@@ -55,9 +57,25 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss', '~/assets/custom-vuetify.scss'],
+    treeShake:true,
+    defaultAssets: {
+      font: {
+        family: 'Noto Sans KR'
+      }
+    },
     theme: {
       dark: true,
       themes: {
+        light: {
+          primary: '#286EF1',
+          increase: '#F50057',
+          decrease: '#286EF1',
+          warning: '#FF392A',
+          error: '#FF392A',
+          hover: '#2058C0',
+          success: '#286EF1',
+          bg: '#F8F8F8'
+        },
         dark: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
@@ -75,7 +93,7 @@ export default {
     download: true,
     overwriting: false,
     families: {
-      Roboto: [300,500]
+      Roboto: [100,300,500,700,900]
     }
   },
 

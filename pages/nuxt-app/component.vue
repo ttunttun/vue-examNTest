@@ -1,7 +1,11 @@
 <template>
   <section>
     <div>
-        <h1>Component</h1>
+      <v-card class="mx-auto" max-width="500">
+        <v-toolbar color="pink" dark>
+          <ChildHeader />
+          <v-toolbar-title>Component</v-toolbar-title>
+        </v-toolbar>
         <v-divider/>
         <test-comp
             ref="childComp"
@@ -21,6 +25,7 @@
         <div>{{dataFromComp}}</div>
         <v-divider />
         <v-btn @click="runFuncChild">자식 컴포넌트의 함수 실행</v-btn>
+        </v-card>
     </div>
   </section>
 </template>
@@ -32,9 +37,11 @@ select, input[type=text] {border:1px solid #333; appearance:initial;}
 
 <script>
 import TestComp from '~/components/comp/TestComp.vue'
+import ChildHeader from '~/components/common/childHeader.vue'
 export default {
   components: {
     TestComp,
+    ChildHeader,
   },
   computed: {
 
@@ -55,9 +62,12 @@ export default {
         this.$refs.childComp.functionFromParent()
     }
 
+  },
+  mounted () {
+    document.querySelector('#navItem1').classList.add('v-list-item--active');
   }
 }
 </script>
 <style scoped>
-.v-subheader { font-weight:700; font-size:1em; }
+  .v-subheader { font-weight:700; font-size:1em; }
 </style>

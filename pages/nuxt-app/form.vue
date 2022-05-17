@@ -1,8 +1,11 @@
 <template>
-  <section class="mx-auto">
+  <section>
     <div>
-        <h1>폼 입력 바인딩</h1>
-        <br/>
+      <v-card class="mx-auto" max-width="500">
+        <v-toolbar color="pink" dark>
+          <ChildHeader />
+          <v-toolbar-title>폼 입력 바인딩</v-toolbar-title>
+        </v-toolbar>
         <h2>텍스트 필드</h2>
         <input
             type="text"
@@ -74,24 +77,27 @@
             :placeholder="'입력해주세요'"
         />
         <span>인풋값은 {{ textfield2}},자료형은 {{ typeof textfield2}}</span>
+      </v-card>
     </div>
   </section>
 </template>
 
 <style scoped>
 hr {margin:.8em 0;}
-select, input[type=text] {border:1px solid #333; appearance:initial;}
+select, input[type=text] {border:1px solid #333; appearance:initial; color:#fff;}
 </style>>
 
 <script>
 import { mapState } from 'vuex'
+import ChildHeader from '~/components/common/childHeader.vue'
 export default {
   components: {
-
+    ChildHeader
   },
   computed: {
 
   },
+
   data(){
     return {
         //기본 값 정의 필요
@@ -103,9 +109,9 @@ export default {
         textfield2: null,
     }
   },
-  methods: {
 
-
+  mounted () {
+    document.querySelector('#navItem1').classList.add('v-list-item--active');
   }
 }
 </script>

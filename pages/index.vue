@@ -1,8 +1,14 @@
 <template>
   <section>
-    <v-card class="mx-auto">
+    <v-card class="mx-auto" max-width="500">
+      <v-toolbar
+        color="light-blue"
+        dark
+      >
+      <v-toolbar-title>Index</v-toolbar-title>
+
+      </v-toolbar>
       <v-list dense>
-        <v-subheader>Index</v-subheader>
         <v-list-item-group v-model="selectedItem" color="primary">
           <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
             <v-list-item-action>

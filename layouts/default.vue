@@ -14,6 +14,7 @@
           :to="item.to"
           router
           exact
+          v-bind:id="'navItem'+ i"
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -67,12 +68,6 @@
 <script>
 export default {
   name: 'DefaultLayout',
-  beforeCreate(){
-    console.log('beforeCreate')
-  },
-  created(){
-    console.log('created')
-  },
   beforeMount(){
     console.log('beforeMount')
   },
@@ -116,6 +111,7 @@ export default {
       miniVariant: false,
       title: '예제 따라하기 및 테스트'
     }
-  }
+  },
+
 }
 </script>

@@ -3,10 +3,15 @@
     <div>
       <v-card
         class="mx-auto"
-        tile
+        max-width="500"
       >
+        <v-toolbar
+          color="pink"
+          dark
+        >
+          <v-toolbar-title>Nuxt App List</v-toolbar-title>
+        </v-toolbar>
         <v-list dense>
-          <v-subheader>Nuxt App List</v-subheader>
           <v-list-item-group
             v-model="selectedItem"
             color="primary"
@@ -19,7 +24,7 @@
                 <v-icon v-text="item.icon"></v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                  <nuxt-link :to="item.link">{{item.text}}</nuxt-link>
+                  <nuxt-link :to="item.href">{{item.text}}</nuxt-link>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
@@ -38,9 +43,21 @@ export default {
       interv : null,
       selectedItem: null,
       items: [
-        {text: 'form', link: '/nuxt-app/form'},
-        {text: 'component', link: '/nuxt-app/component'},
-        {text: 'store', link: '/nuxt-app/store'}
+        {
+          icon: 'mdi-file-document',
+          text: 'form',
+          href: '/nuxt-app/form'
+        },
+        {
+          icon: 'mdi-application',
+          text: 'component',
+          href: '/nuxt-app/component'
+        },
+        {
+          icon: 'mdi-store',
+          text: 'store',
+          href: '/nuxt-app/store'
+        }
       ]
     }
   },
@@ -66,7 +83,7 @@ export default {
 
 
 <style scoped>
-p {font-size:12px; line-height:1.5em; color:#000}
-button {border:1px solid #ddd; border-radius:2px; padding:.2em; cursor: pointer;;}
+p {line-height:1.5em; color:#000}
+button {border:1px solid #ddd; border-radius:2px; padding:.2em; cursor: pointer; }
 .v-subheader { font-weight:700; font-size:1em; }
 </style>
