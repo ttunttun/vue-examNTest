@@ -67,6 +67,16 @@ export default {
                   icon: 'mdi-link',
                   title: '5-3',
                   to: '/book/week/5-3'
+                },
+                {
+                  icon: 'mdi-link',
+                  title: '5-4',
+                  to: '/book/week/5-4'
+                },
+                {
+                  icon: 'mdi-link',
+                  title: '5-5',
+                  to: '/book/week/5-5'
                 }
               ]
             }, 
