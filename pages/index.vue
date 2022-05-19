@@ -33,14 +33,19 @@ export default {
       selectedItem: null,
       items: [
         {
-          icon: 'mdi-format-list-bulleted',
+          icon: 'mdi-chart-bubble',
           text: 'Nuxt App 예제',
           to: '/nuxt-app/'
         },
         {
-          icon: 'mdi-format-list-bulleted',
+          icon: 'mdi-notebook-check-outline',
           text: '책 예제',
           to: '/book/'
+        },
+        {
+          icon: 'mdi-vuejs',
+          text: 'vue 예제',
+          to: '/vueExam/'
         },
       ],
     }

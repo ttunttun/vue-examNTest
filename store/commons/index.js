@@ -4,7 +4,7 @@ export const state = () => ({
 })
 
 
-export const mutations = {
+export const mutations = { //state를 변경시키는 역할, Mutations 통해서만 state를 변경해야한다. (동기처리)
   setSubject(state, subject) {
       console.log(subject)
       state.subject = subject
@@ -14,7 +14,7 @@ export const mutations = {
   }
 }
 
-export const actions = {
+export const actions = { // 주요 목적은 Mutations를 실행시키는 역할 (비동기 처리)
   /* getSubject(state) {
       return state.subject
   } */
@@ -22,7 +22,7 @@ export const actions = {
       return this.$axios.get('test/test.json').then(response => {
           console.log(response)
           if(response.data.success){
-              state.commit('setListData', response.data.content)
+              state.commit('setListData', response.data.content) //commit('함수명', '전달인자')
           }
       })
   },

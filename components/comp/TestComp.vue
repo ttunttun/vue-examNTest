@@ -9,7 +9,7 @@
 </template>
 
 <style scoped>
-.wrap {border:1px solid #ddd; padding:1em; border-radius:.2em; background-color:#f3f3f3;}
+.wrap {border:1px solid #ddd; padding:1em; border-radius:.2em;}
 </style>
 
 <script>

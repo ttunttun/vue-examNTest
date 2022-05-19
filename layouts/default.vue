@@ -7,7 +7,7 @@
       fixed
       app
     >
-      <v-list>
+      <v-list rounded>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -106,6 +106,11 @@ export default {
           icon: 'mdi-notebook-check-outline',
           title: '책 예제',
           to: '/book/'
+        },
+        {
+          icon: 'mdi-vuejs',
+          title: 'Vue 예제',
+          to: '/vueExam/'
         }
       ],
       miniVariant: false,

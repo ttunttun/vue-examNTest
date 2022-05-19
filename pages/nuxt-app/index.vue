@@ -57,6 +57,11 @@ export default {
           icon: 'mdi-store',
           text: 'store',
           href: '/nuxt-app/store'
+        },
+        {
+          icon: 'mdi-store',
+          text: 'store_test',
+          href: '/nuxt-app/store_test'
         }
       ]
     }

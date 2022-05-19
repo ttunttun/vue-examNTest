@@ -4,9 +4,8 @@
       <v-card class="mx-auto" max-width="500">
         <v-toolbar color="pink" dark>
           <ChildHeader />
-          <v-toolbar-title>폼 입력 바인딩</v-toolbar-title>
+          <v-toolbar-title>Store</v-toolbar-title>
         </v-toolbar>
-        <h1>Store</h1>
         <div>텍스트 가져오기 store/index.js/subject: {{thisSubject}}</div>
         <button @click="setSubjectData">'테스트용 제목'을 store/index.js/subject에 저장</button>
         <hr/>

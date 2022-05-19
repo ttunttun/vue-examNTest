@@ -7,17 +7,42 @@
       >
         <v-toolbar-title>책 예제 따라하기</v-toolbar-title>
       </v-toolbar>
-      <v-list dense>
-        <v-list-item-group v-model="selectedItem" color="primary">
-          <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
-            <v-list-item-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <nuxt-link :to="item.to">{{item.title}}</nuxt-link>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
+      <v-list>
+        <v-list-group
+          v-for="(item, i) in items"
+          :key="i"
+          v-model="item.active"
+          :prepend-icon="item.icon"
+          no-action
+        >
+          <template v-slot:activator>
+            <v-list-item-title v-text="item.title"></v-list-item-title>
+          </template>
+          <v-list-group
+            v-for="chapter in item.chapter"
+            :key="item.title"
+            v-model="chapter.active"
+            :prepend-icon="chapter.icon"
+            sub-group
+            no-action
+          >
+            <template v-slot:activator>
+              <v-list-item-content>
+                <v-list-item-title v-text="chapter.title"></v-list-item-title>
+              </v-list-item-content>
+            </template>
+            <v-list-item
+              v-for="exam in chapter.exam"
+              :key="chapter.title"
+              :to="exam.to"
+            >
+             <v-list-item-icon>
+                <v-icon v-text="exam.icon"></v-icon>
+              </v-list-item-icon>
+              <v-list-item-title v-text="exam.title"></v-list-item-title>
+            </v-list-item>
+          </v-list-group>
+        </v-list-group>
       </v-list>
     </v-card>
   </section>
@@ -25,31 +50,50 @@
 
 <script>
 export default {
-  name: '책 예제',
   components: {
 
   },
   data() {
     return {
-      viewTest: false,
-      selectedItem: null,
       items: [
         {
-          icon:'mdi-table-of-contents',
-          title: '3-12',
-          to: '/book/3-12'
+          icon:'mdi-notebook',
+          title: '투입 일주일 전',
+          chapter: [
+            {
+              title:'Chapter 5장',
+              exam: [
+                {
+                  icon: 'mdi-link',
+                  title: '5-3',
+                  to: '/book/week/5-3'
+                }
+              ]
+            }, 
+            {
+              title:'Chapter 6장',
+              exam: [
+                {
+                  icon: 'mdi-link',
+                  title: '6-1',
+                  to: '/book/week/6-1'
+                }
+              ]
+            }
+          ]
         },
+        {
+          icon:'mdi-notebook',
+          title: '한권으로 배우는 Vue.js',
+          chapter: [
+            {
+              title:'4-1',
+              to: '/book/4-1'
+            }
+          ]
+        }
       ],
     }
   },
 }
 </script>
-
-<style lang="scss">
-  @import "~/assets/variables.scss";
-  @import "~/assets/custom-vuetify.scss";
-</style>
-
-<style scoped>
-  .v-subheader { font-weight:700; font-size:1em; }
-</style>
