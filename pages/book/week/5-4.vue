@@ -72,11 +72,8 @@
         ]
       };
     },
-    beforeCreate() {},
-    created() {},
-    beforeMount() {},
-    mounted() {},
-    unmounted() {},
-    methods: {}
+    mounted () {
+      document.querySelector('#navItem2').classList.add('v-list-item--active');
+    }
   }
 </script>

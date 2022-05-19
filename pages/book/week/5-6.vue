@@ -52,6 +52,9 @@
         selectValue: ''
       };
     },
+    mounted () {
+      document.querySelector('#navItem2').classList.add('v-list-item--active');
+    },
     methods: {
       increaseCounter() {
         this.counter = this.counter + 1;

@@ -112,14 +112,9 @@ export default {
       errorClass: 'text-red'
     };
   },
-  beforeCreate() {},
-  created() {},
-  beforeMount() {},
   mounted () {
     document.querySelector('#navItem2').classList.add('v-list-item--active');
-  },
-  unmounted() {},
-  methods: {}
+  }
 }
 </script>
 <style lang="scss" scoped>
