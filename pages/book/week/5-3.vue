@@ -119,7 +119,7 @@ export default {
     document.querySelector('#navItem2').classList.add('v-list-item--active');
   },
   unmounted() {},
-  mehthods: {}
+  methods: {}
 }
 </script>
 <style lang="scss" scoped>

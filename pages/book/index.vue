@@ -75,8 +75,8 @@ export default {
                 },
                 {
                   icon: 'mdi-link',
-                  title: '5-5',
-                  to: '/book/week/5-5'
+                  title: '5-6',
+                  to: '/book/week/5-6'
                 }
               ]
             }, 
