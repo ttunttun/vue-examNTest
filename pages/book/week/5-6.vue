@@ -1,11 +1,11 @@
 <template>
   <section>
-    <v-card class="mx-auto" max-width="500">
-        <v-toolbar color="green" dark>
+    <v-card class="mx-auto" max-width="700">
+      <v-toolbar color="green" dark>
         <ChildHeader />
         <v-toolbar-title>{{ defaultTitle }}5-6</v-toolbar-title>
       </v-toolbar>
-      <div class="chapter">       
+      <div class="chapter">
         <ul class="chapter_lst">
           <li>
             <v-btn class="mx-2" fab dark small color="pink" @click="increaseCounter">
@@ -26,11 +26,28 @@
           <li>
             <div class="version">5.6.2</div>
             <div class="content">
-              <select name="" id="" v-model="selectedValue" @change="changeSelect">
+              <select v-model="selectedValue" @change="changeSelect">
                 <option value="서울">서울</option>
                 <option value="부산">부산</option>
                 <option value="제주">제주</option>
               </select>
+            </div>
+          </li>
+          <li>
+            <div class="version">5.6.3</div>
+            <div class="content">
+              <div>
+                <p>엔터키가 입력되는지 아주 쉽게 처리 할 수 있다.</p>
+                <input @keyup.enter="submit"/>
+              </div>
+              <div>
+                <p>Alt + Enter</p>
+                <input @keyup.alt.enter="clear"/>
+              </div>
+              <div>
+                <p>Ctrl + Click</p>
+                <code>&lt;div @click.ctrl="doSomething"/&gt;Do something&lt;/div&gt;</code>
+              </div>
             </div>
           </li>
         </ul>
@@ -49,7 +66,7 @@
       return {
         defaultTitle: '프로젝트 투입 일주일전 예제 ',
         counter:0,
-        selectValue: ''
+        selectedValue: ''
       };
     },
     mounted () {
@@ -92,5 +109,8 @@
     width:100%;
     border:1px solid rgba(255,255,255,0.2);
     color:#fff;
+    option { 
+      background-color:#000;
+    }
   }
 </style>

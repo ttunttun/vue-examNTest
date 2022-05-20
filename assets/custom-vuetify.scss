@@ -8,6 +8,15 @@
  * Copyright © 2021-2022 ADCAPSULE
  */
 
+select {
+    width:100%;
+    border:1px solid rgba(255,255,255,0.2);
+    color:#fff;
+    option { 
+      background-color:#000;
+    }
+  }
+
 header {
   border-bottom:1px solid #999; margin-bottom:1em; padding-bottom:1em;
   h1 {font-size:16px; color:white;}
@@ -18,3 +27,17 @@ header {
     color:#fff;
   }
 }
+
+.chapter {
+    padding:1em;
+    .chapter_lst {
+      > li {
+        margin-bottom:15px;
+        list-style-type: none;
+      }
+      .version {
+        font-size:18px;
+        font-weight:bold;
+      }
+    }
+  }

@@ -77,16 +77,26 @@ export default {
                   icon: 'mdi-link',
                   title: '5-6',
                   to: '/book/week/5-6'
+                },
+                {
+                  icon: 'mdi-link',
+                  title: '5-7-1',
+                  to: '/book/week/5-7-1'
+                },
+                {
+                  icon: 'mdi-link',
+                  title: '5-7-2',
+                  to: '/book/week/5-7-2'
                 }
               ]
             }, 
             {
-              title:'Chapter 6장',
+              title:'Chapter 7장',
               exam: [
                 {
                   icon: 'mdi-link',
-                  title: '6-1',
-                  to: '/book/week/6-1'
+                  title: '7-2-2',
+                  to: '/book/week/7-2-2'
                 }
               ]
             }

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-card class="mx-auto" max-width="500">
+    <v-card class="mx-auto" max-width="700">
       <v-toolbar color="green" dark>
         <ChildHeader />
         <v-toolbar-title>{{ defaultTitle }}5-4</v-toolbar-title>
